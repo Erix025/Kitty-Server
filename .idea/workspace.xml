@@ -10,43 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f4ff52f-fb49-47ed-9c05-8cae566635e8" name="Changes" comment="User login completed">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MainServer_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataBase/Users.data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Methods/DataFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/DataBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/Data.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LoginData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LoginReturnData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/RegisterData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/RegisterReturnData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Threads/ListenThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Threads/ReadThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/DataBase/Users.data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Examples/DataBase/UsersExample.data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Examples/LoginDataExample.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Examples/LoginReturnDataExample.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Examples/MessageExample.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Examples/RegisterDataExample.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Examples/RegisterReturnDataExample.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,14 +72,46 @@
       <option name="presentableId" value="Default" />
       <updated>1673237807978</updated>
     </task>
+    <task id="LOCAL-00001" summary="User login completed">
+      <created>1673838588283</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673838588283</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="SHOW_OTHER_BRANCHES" value="true" />
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
