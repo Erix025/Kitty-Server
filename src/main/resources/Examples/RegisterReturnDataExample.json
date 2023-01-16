@@ -1,0 +1,5 @@
+{
+  "Head": "RegisterReturnData",
+  "Valid": false,
+  "Information": "The username has already existed."
+}
