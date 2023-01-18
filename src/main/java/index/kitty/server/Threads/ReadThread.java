@@ -1,5 +1,6 @@
 package index.kitty.server.Threads;
 
+import index.kitty.server.Main;
 import index.kitty.server.Methods.DataFactory;
 import index.kitty.server.Models.Client;
 import index.kitty.server.Models.Datas.Data;
@@ -21,7 +22,10 @@ public class ReadThread extends Thread {
             try {
                 String dataSource = client.getData();
                 if (dataSource.equals("")) {
-                    return;// when the socket is closed
+                    // when the socket is closed
+                    Main.mainServer.removeClient(client);
+                    client.disconnect();
+                    return;
                 }
                 DataFactory.DataAnalysis(new Data(dataSource), client);// Analysis Data
             } catch (IOException e) {

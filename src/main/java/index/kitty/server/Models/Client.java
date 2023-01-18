@@ -40,10 +40,11 @@ public class Client {
     public String getClientAddressInfo() {
         return socket.getInetAddress().getHostAddress();
     }
-
+    // disconnect client
     public void disconnect() {
         try {
             socket.close();
+            //remove logged client and user
         } catch (IOException e) {
             System.out.println(e);
         }

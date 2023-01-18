@@ -1,4 +1,5 @@
 package index.kitty.server.Models;
+
 import index.kitty.server.Threads.ListenThread;
 
 import java.io.*;
@@ -19,6 +20,7 @@ public class Server {
     private ExecutorService tasksThreadPool;
     private DataBase dataBase;
     private ArrayList<User> aliveUsers = new ArrayList<>();
+
     // constructor with port
     public Server(int port) {
         // starts server and starts listening thread
@@ -32,47 +34,69 @@ public class Server {
             //create listening thread
             listenThread = new ListenThread(this);
             listenThread.start();
-        }
-        catch (IOException i) {
+        } catch (IOException i) {
             System.out.println(i);
         }
     }
-    public void Close(){
+
+    public void Close() {
         // close Threads
         listenThread.interrupt();
         // close connection
-        try{
-            for (Client client:Clients) {
+        try {
+            for (Client client : Clients) {
                 client.disconnect();
             }
             serverSocket.close();
-        }
-        catch(IOException i)
-        {
+        } catch (IOException i) {
             System.out.println(i);
         }
         //save database
         dataBase.SaveData();
     }
-    public void putTask(Runnable task){
+
+    public void putTask(Runnable task) {
         tasksThreadPool.submit(task);
     }
-    public User getAliveUser(String ID) throws NoSuchElementException
-    {
-        for(User user : aliveUsers)
-        {
-            if(Objects.equals(user.getID(), ID))
-            {
+
+    public User getAliveUser(String ID) throws NoSuchElementException {
+        for (User user : aliveUsers) {
+            if (Objects.equals(user.getID(), ID)) {
                 return user;
             }
         }
-        throw new NoSuchElementException("Cannot find User with such ID") ;
+        throw new NoSuchElementException("Cannot find User with such ID");
     }
-    public void putAliveUser(User user)
-    {
+
+    public void putAliveUser(User user) {
         aliveUsers.add(user);
     }
+
     public DataBase getDataBase() {
         return dataBase;
+    }
+
+    public void removeClient(Client client) {
+        for (User user : aliveUsers) {
+            if (user.getClients().contains(client)) {
+                if (user.getClients().size() == 1) {
+                    aliveUsers.remove(user);
+                } else {
+                    user.getClients().remove(client);
+                }
+                break;
+            }
+        }
+        Clients.remove(client);
+    }
+    public boolean isClientConnected(Socket socket) {
+        for (Client client : Clients)
+        {
+            if(client.getClientAddressInfo().equals(socket.getInetAddress().getHostAddress()))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
