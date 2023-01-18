@@ -1,21 +1,18 @@
 package index.kitty.server.Models.Datas;
 
 import com.alibaba.fastjson2.JSONObject;
-import index.kitty.server.Models.Client;
 
 public class RegisterData {
     private JSONObject json;
     private String userID;
     private String password;
-    private Client registerClient;
 
     public final static String Head = "RegisterData";
 
-    public RegisterData(Data data, Client client) {
+    public RegisterData(Data data) {
         json = data.getJson();
         userID = json.getString("UserID");
         password = json.getString("Password");
-        registerClient = client;
     }
 
     public RegisterData(String userID, String password, String clientType) {
@@ -39,7 +36,4 @@ public class RegisterData {
         return userID;
     }
 
-    public Client getRegisterClient() {
-        return registerClient;
-    }
 }

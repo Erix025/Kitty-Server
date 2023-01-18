@@ -12,9 +12,6 @@ import java.util.NoSuchElementException;
 public class DataFactory {
     private static void DataAnalysis(Data source) {
         switch (source.getHead()) {
-            case Message.Head:
-                Main.mainServer.putTask(new SendMessage(new Message(source)));
-                break;
             case LoginReturnData.Head:
                 break;
             case RegisterReturnData.Head:
@@ -25,11 +22,14 @@ public class DataFactory {
     public static void DataAnalysis(Data source, Client client) {
         DataAnalysis(source);
         switch (source.getHead()) {
+            case Message.Head:
+                Main.mainServer.putTask(new SendMessage(new Message(source), client));
+                break;
             case LoginData.Head:
-                Main.mainServer.putTask(new UserLogin(new LoginData(source, client)));
+                Main.mainServer.putTask(new UserLogin(new LoginData(source), client));
                 break;
             case RegisterData.Head:
-                Main.mainServer.putTask(new UserRegister(new RegisterData(source, client)));
+                Main.mainServer.putTask(new UserRegister(new RegisterData(source), client));
                 break;
         }
     }
@@ -37,46 +37,39 @@ public class DataFactory {
 
 class SendMessage implements Runnable {
     private Message message;
+    private Client client;
 
-    SendMessage(Message message) {
+    SendMessage(Message message, Client client) {
         this.message = message;
+        this.client = client;
     }
 
     @Override
     public void run() {
         User object;
+        MessageReturn returnData;
         try {
-            /*
-             * //get receiver
-             * object = Main.mainServer.getUser(message.getReceiveUserID());
-             * for(Client client : object.getClients())
-             * {
-             * try {
-             * client.getOutStream().writeUTF(JSON.toJSONString(message.getJson()));
-             * }
-             * catch(IOException e)
-             * {
-             * //TODO: log ERR
-             * }
-             * }
-             */
-            System.out.println(JSON.toJSONString(message.getJson()));
-            System.out.println(message.getContent());
-            System.out.println(message.getSendTime());
-            System.out.println(message.getSendUserID());
-            System.out.println(message.getReceiveUserID());
+            // get receiver
+            object = Main.mainServer.getAliveUser(message.getReceiveUserID());
+            for (Client client : object.getClients()) {
+                client.putData(JSON.toJSONString(message.getJson()));
+            }
+            returnData = new MessageReturn(true, "发送成功");
         } catch (NoSuchElementException e) {
+            returnData = new MessageReturn(false, "用户未登录或不存在");
             // TODO: Cache Message
         }
-
+        client.putData(JSON.toJSONString(returnData.getJson()));
     }
 }
 
 class UserLogin implements Runnable {
     private LoginData loginData;
+    private Client client;
 
-    UserLogin(LoginData loginData) {
+    UserLogin(LoginData loginData, Client client) {
         this.loginData = loginData;
+        this.client = client;
     }
 
     @Override
@@ -94,12 +87,13 @@ class UserLogin implements Runnable {
         // login or not login
         if (loginValid) {
             // TODO login log
+            client.setClientType(loginData.getClientType());
             // Add the user in AliveUsers
             try {
                 // if the user has already been alive
                 User user = Main.mainServer.getAliveUser(loginData.getUserID());
                 try {
-                    user.putClient(loginData.getLoginClient());
+                    user.putClient(client);
                     loginInformation = "Login successfully";
                 } catch (AlreadyConnectedException e) {
                     loginValid = false;
@@ -107,7 +101,7 @@ class UserLogin implements Runnable {
                 }
             } catch (NoSuchElementException e) {
                 // if the user has not been alive
-                Main.mainServer.putAliveUser(new User(loginData.getUserID(), loginData.getLoginClient()));
+                Main.mainServer.putAliveUser(new User(loginData.getUserID(), client));
                 loginInformation = "Login successfully";
             }
         } else {
@@ -115,15 +109,17 @@ class UserLogin implements Runnable {
         }
         // send return data
         var returnData = new LoginReturnData(loginValid, loginInformation);
-        loginData.getLoginClient().putData(JSON.toJSONString(returnData.getJson()));
+        client.putData(JSON.toJSONString(returnData.getJson()));
     }
 }
 
 class UserRegister implements Runnable {
     private RegisterData registerData;
+    private Client client;
 
-    UserRegister(RegisterData registerData) {
+    UserRegister(RegisterData registerData, Client client) {
         this.registerData = registerData;
+        this.client = client;
     }
 
     @Override
@@ -144,6 +140,6 @@ class UserRegister implements Runnable {
         }
         System.out.println(registerReturnInformation);
         RegisterReturnData returnData = new RegisterReturnData(registerValid, registerReturnInformation);
-        registerData.getRegisterClient().putData(JSON.toJSONString(returnData.getJson()));
+        client.putData(JSON.toJSONString(returnData.getJson()));
     }
 }

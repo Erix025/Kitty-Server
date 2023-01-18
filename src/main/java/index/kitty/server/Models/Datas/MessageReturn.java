@@ -2,24 +2,24 @@ package index.kitty.server.Models.Datas;
 
 import com.alibaba.fastjson2.JSONObject;
 
-public class RegisterReturnData {
+public class MessageReturn {
     private JSONObject json;
-    private boolean isRegisterValid;
+    private boolean isMessageValid;
     private String information;
-    public final static String Head = "RegisterReturnData";
+    public final static String Head = "MessageReturn";
 
-    public RegisterReturnData(Data data) {
+    public MessageReturn(Data data) {
         json = data.getJson();
-        isRegisterValid = json.getBoolean("Valid");
+        isMessageValid = json.getBooleanValue("Valid");
         information = json.getString("Information");
     }
 
-    public RegisterReturnData(boolean isRegisterValid, String information) {
-        this.isRegisterValid = isRegisterValid;
+    public MessageReturn(boolean isMessageValid, String information) {
+        this.isMessageValid = isMessageValid;
         this.information = information;
         json = new JSONObject();
         json.put("Head", Head);
-        json.put("Valid", isRegisterValid);
+        json.put("Valid", isMessageValid);
         json.put("Information", information);
     }
 
@@ -31,7 +31,7 @@ public class RegisterReturnData {
         return information;
     }
 
-    public boolean isRegisterValid() {
-        return isRegisterValid;
+    public boolean isMessageValid() {
+        return isMessageValid;
     }
 }
