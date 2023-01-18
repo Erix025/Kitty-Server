@@ -17,8 +17,9 @@ public class RegisterData {
         password = json.getString("Password");
         registerClient = client;
     }
-    public RegisterData(String userID, String password, String clientType){
-        this.userID =userID;
+
+    public RegisterData(String userID, String password, String clientType) {
+        this.userID = userID;
         this.password = password;
         json = new JSONObject();
         json.put("Head", Head);

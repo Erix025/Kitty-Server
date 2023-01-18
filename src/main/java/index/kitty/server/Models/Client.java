@@ -7,16 +7,16 @@ import java.net.Socket;
 
 public class Client {
     private Socket socket;
-    private DataInputStream in;
-    private DataOutputStream out;
+    private BufferedReader in;
+    private BufferedWriter out;
     private ReadThread readThread;
     private String clientType;
     public Client(Socket socket) {
         this.socket = socket;
         try {
             //set DataStream
-            in = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
-            out = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
+            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             readThread = new ReadThread(this);
             readThread.start();
         } catch (IOException e) {
@@ -28,11 +28,11 @@ public class Client {
         return socket;
     }
 
-    public DataInputStream getInputStream() {
+    public BufferedReader getInputStream() {
         return in;
     }
 
-    public DataOutputStream getOutStream() {
+    public BufferedWriter getOutStream() {
         return out;
     }
 
@@ -53,7 +53,7 @@ public class Client {
     public String getData() throws EOFException {
         String line = "";
         try {
-            line = in.readUTF();
+            line = in.readLine();
         } catch (EOFException e) {
             throw e;
         } catch (IOException e) {
@@ -64,7 +64,7 @@ public class Client {
     public void putData(String data)
     {
         try {
-            out.writeUTF(data);
+            out.write(data + "\n");
             out.flush();
         } catch (IOException e) {
             throw new RuntimeException(e);

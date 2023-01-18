@@ -1,13 +1,11 @@
 package index.kitty.server.Methods;
 
 import com.alibaba.fastjson2.JSON;
-import com.alibaba.fastjson2.JSONObject;
 import index.kitty.server.Main;
 import index.kitty.server.Models.Client;
 import index.kitty.server.Models.Datas.*;
 import index.kitty.server.Models.User;
 
-import java.io.IOException;
 import java.nio.channels.AlreadyConnectedException;
 import java.util.NoSuchElementException;
 
@@ -49,25 +47,26 @@ class SendMessage implements Runnable {
         User object;
         try {
             /*
-            //get receiver
-            object = Main.mainServer.getUser(message.getReceiveUserID());
-            for(Client client : object.getClients())
-            {
-                try {
-                    client.getOutStream().writeUTF(JSON.toJSONString(message.getJson()));
-                }
-                catch(IOException e)
-                {
-                    //TODO: log ERR
-                }
-            }*/
+             * //get receiver
+             * object = Main.mainServer.getUser(message.getReceiveUserID());
+             * for(Client client : object.getClients())
+             * {
+             * try {
+             * client.getOutStream().writeUTF(JSON.toJSONString(message.getJson()));
+             * }
+             * catch(IOException e)
+             * {
+             * //TODO: log ERR
+             * }
+             * }
+             */
             System.out.println(JSON.toJSONString(message.getJson()));
             System.out.println(message.getContent());
             System.out.println(message.getSendTime());
             System.out.println(message.getSendUserID());
             System.out.println(message.getReceiveUserID());
         } catch (NoSuchElementException e) {
-            //TODO: Cache Message
+            // TODO: Cache Message
         }
 
     }
@@ -82,7 +81,7 @@ class UserLogin implements Runnable {
 
     @Override
     public void run() {
-        //check the username and password
+        // check the username and password
         var userList = Main.mainServer.getDataBase().UserDataBase;
         String loginInformation = "";
         boolean loginValid = false;
@@ -92,12 +91,12 @@ class UserLogin implements Runnable {
                 break;
             }
         }
-        //login or not login
+        // login or not login
         if (loginValid) {
-            //TODO login log
-            //Add the user in AliveUsers
+            // TODO login log
+            // Add the user in AliveUsers
             try {
-                //if the user has already been alive
+                // if the user has already been alive
                 User user = Main.mainServer.getAliveUser(loginData.getUserID());
                 try {
                     user.putClient(loginData.getLoginClient());
@@ -107,14 +106,14 @@ class UserLogin implements Runnable {
                     loginInformation = "This client has already logged in";
                 }
             } catch (NoSuchElementException e) {
-                //if the user has not been alive
-                Main.mainServer.putAliveUser(new User(loginData.getUserID(),loginData.getLoginClient()));
+                // if the user has not been alive
+                Main.mainServer.putAliveUser(new User(loginData.getUserID(), loginData.getLoginClient()));
                 loginInformation = "Login successfully";
             }
         } else {
             loginInformation = "The user isn't existed or the password is not correct";
         }
-        //send return data
+        // send return data
         var returnData = new LoginReturnData(loginValid, loginInformation);
         loginData.getLoginClient().putData(JSON.toJSONString(returnData.getJson()));
     }

@@ -9,7 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ff52f-fb49-47ed-9c05-8cae566635e8" name="Changes" comment="User login completed" />
+    <list default="true" id="1f4ff52f-fb49-47ed-9c05-8cae566635e8" name="Changes" comment="User login completed">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Methods/DataFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Methods/DataFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LoginData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LoginData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LoginReturnData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LoginReturnData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/RegisterData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/RegisterData.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,15 +130,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="User login completed" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/index/kitty/server/Methods/DataFactory.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="index.kitty.server.Models.Datas.RegisterData" memberName="registerClient" />

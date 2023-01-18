@@ -7,12 +7,14 @@ public class LoginReturnData {
     private boolean isLoginValid;
     private String information;
     public final static String Head = "LoginReturnData";
+
     public LoginReturnData(Data data) {
         json = data.getJson();
         isLoginValid = json.getBoolean("Valid");
         information = json.getString("Information");
     }
-    public LoginReturnData(boolean isLoginValid, String information){
+
+    public LoginReturnData(boolean isLoginValid, String information) {
         this.isLoginValid = isLoginValid;
         this.information = information;
         json = new JSONObject();

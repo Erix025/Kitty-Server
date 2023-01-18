@@ -1,7 +1,6 @@
 package index.kitty.server.Models.Datas;
 
 import com.alibaba.fastjson2.JSONObject;
-import index.kitty.server.Models.User;
 
 import java.util.Date;
 

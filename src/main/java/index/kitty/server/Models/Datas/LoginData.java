@@ -11,7 +11,7 @@ public class LoginData {
     private Client loginClient;
     public final static String Head = "LoginData";
 
-    public LoginData(Data data, Client client) //Receive the LoginData
+    public LoginData(Data data, Client client) // Receive the LoginData
     {
         json = data.getJson();
         userID = json.getString("UserID");
@@ -20,9 +20,10 @@ public class LoginData {
         loginClient = client;
         loginClient.setClientType(clientType);
     }
-    public LoginData(String userID, String password, String clientType)//Create the LoginData
+
+    public LoginData(String userID, String password, String clientType)// Create the LoginData
     {
-        this.userID =userID;
+        this.userID = userID;
         this.password = password;
         this.clientType = clientType;
         json = new JSONObject();
