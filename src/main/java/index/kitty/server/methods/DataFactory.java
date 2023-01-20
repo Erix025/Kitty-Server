@@ -1,45 +1,32 @@
-package index.kitty.server.Methods;
+package index.kitty.server.methods;
 
 import com.alibaba.fastjson2.JSON;
 import index.kitty.server.Main;
-import index.kitty.server.Models.Client;
-import index.kitty.server.Models.Datas.*;
-import index.kitty.server.Models.User;
+import index.kitty.server.models.Client;
+import index.kitty.server.models.datas.*;
+import index.kitty.server.models.User;
 
 import java.nio.channels.AlreadyConnectedException;
 import java.util.NoSuchElementException;
 
 public class DataFactory {
     private static void DataAnalysis(Data source) {
-        switch (source.getHead()) {
-            case LoginReturnData.Head:
-                break;
-            case RegisterReturnData.Head:
-                break;
-        }
     }
 
     public static void DataAnalysis(Data source, Client client) {
         DataAnalysis(source);
         switch (source.getHead()) {
-            case Message.Head:
-                Main.mainServer.putTask(new SendMessage(new Message(source), client));
-                break;
-            case LoginData.Head:
-                Main.mainServer.putTask(new UserLogin(new LoginData(source), client));
-                break;
-            case RegisterData.Head:
-                Main.mainServer.putTask(new UserRegister(new RegisterData(source), client));
-                break;
-            case LogoutData.Head:
-                Main.mainServer.putTask(new UserLogout(new LogoutData(source), client));
+            case Message.Head -> Main.mainServer.putTask(new SendMessage(new Message(source), client));
+            case LoginData.Head -> Main.mainServer.putTask(new UserLogin(new LoginData(source), client));
+            case RegisterData.Head -> Main.mainServer.putTask(new UserRegister(new RegisterData(source), client));
+            case LogoutData.Head -> Main.mainServer.putTask(new UserLogout(new LogoutData(source), client));
         }
     }
 }
 
 class SendMessage implements Runnable {
-    private Message message;
-    private Client client;
+    private final Message message;
+    private final Client client;
 
     SendMessage(Message message, Client client) {
         this.message = message;
@@ -66,8 +53,8 @@ class SendMessage implements Runnable {
 }
 
 class UserLogin implements Runnable {
-    private LoginData loginData;
-    private Client client;
+    private final LoginData loginData;
+    private final Client client;
 
     UserLogin(LoginData loginData, Client client) {
         this.loginData = loginData;
@@ -78,7 +65,7 @@ class UserLogin implements Runnable {
     public void run() {
         // check the username and password
         var userList = Main.mainServer.getDataBase().UserDataBase;
-        String loginInformation = "";
+        String loginInformation;
         boolean loginValid = false;
         for (User user : userList) {
             if (user.getID().equals(loginData.getUserID()) && user.getPassword().equals(loginData.getPassword())) {
@@ -115,8 +102,8 @@ class UserLogin implements Runnable {
     }
 }
 class UserLogout implements  Runnable{
-    private LogoutData logoutData;
-    private Client client;
+    private final LogoutData logoutData;
+    private final Client client;
     UserLogout(LogoutData logoutData, Client client)
     {
         this.logoutData = logoutData;
@@ -131,8 +118,8 @@ class UserLogout implements  Runnable{
     }
 }
 class UserRegister implements Runnable {
-    private RegisterData registerData;
-    private Client client;
+    private final RegisterData registerData;
+    private final Client client;
 
     UserRegister(RegisterData registerData, Client client) {
         this.registerData = registerData;

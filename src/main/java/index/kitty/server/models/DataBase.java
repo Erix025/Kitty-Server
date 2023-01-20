@@ -1,10 +1,10 @@
-package index.kitty.server.Models;
+package index.kitty.server.models;
 
 import java.io.*;
 import java.util.ArrayList;
 
 public class DataBase {
-    public ArrayList<User> UserDataBase = new ArrayList<>();
+    public final ArrayList<User> UserDataBase = new ArrayList<>();
 
     public DataBase() {
         LoadData();
@@ -16,9 +16,7 @@ public class DataBase {
         UsersSave();
     }
     private void UsersLoad() {
-        //final String PATH = DataBase.class.getClassLoader().getResource("DataBase/Users.data").getPath();
         final String PATH = "DataBase/Users.data";
-
         try (BufferedReader reader = new BufferedReader(new FileReader(PATH))) {
             String line = reader.readLine();
             User user = new User();
@@ -39,13 +37,14 @@ public class DataBase {
                 line = reader.readLine();
             }
         } catch (FileNotFoundException e) {
+            //todo log
         } catch (IOException e) {
+            //todo log
             throw new RuntimeException(e);
         }
     }
 
     private void UsersSave() {
-        //final String PATH = DataBase.class.getClassLoader().getResource("DataBase/Users.data").getPath();
         final String PATH = "DataBase/Users.data";
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(PATH))) {
             String line;
@@ -57,6 +56,7 @@ public class DataBase {
                 writer.flush();
             }
         } catch (IOException e) {
+            //todo log
             throw new RuntimeException(e);
         }
     }

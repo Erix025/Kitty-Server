@@ -1,6 +1,6 @@
-package index.kitty.server.Models;
+package index.kitty.server.models;
 
-import index.kitty.server.Threads.ListenThread;
+import index.kitty.server.threads.ListenThread;
 
 import java.io.*;
 import java.util.logging.*;
@@ -13,14 +13,14 @@ import java.util.concurrent.Executors;
 
 public class Server {
     // initialize socket and input stream
-    public ArrayList<Client> Clients = new ArrayList<Client>();
+    public final ArrayList<Client> Clients = new ArrayList<>();
     public ServerSocket serverSocket = null;
     // listening Thread
     private ListenThread listenThread;
     // Tasks thread pool
     private ExecutorService tasksThreadPool;
     private DataBase dataBase;
-    private ArrayList<User> aliveUsers = new ArrayList<>();
+    private final ArrayList<User> aliveUsers = new ArrayList<>();
     private Logger serverLogger;
 
     // constructor with port
@@ -36,11 +36,13 @@ public class Server {
             dataBase = new DataBase();
             // create tasks thread pool
             tasksThreadPool = Executors.newFixedThreadPool(5);
+            //todo log
+
             // create listening thread
             listenThread = new ListenThread(this);
             listenThread.start();
         } catch (IOException i) {
-            System.out.println(i);
+            //todo log
         }
     }
 
@@ -54,13 +56,14 @@ public class Server {
             }
             serverSocket.close();
         } catch (IOException i) {
-            System.out.println(i);
+            //todo log
         }
         // save database
         dataBase.SaveData();
     }
 
     public void putTask(Runnable task) {
+        //todo log
         tasksThreadPool.submit(task);
     }
 
@@ -70,6 +73,7 @@ public class Server {
                 return user;
             }
         }
+        //todo log
         throw new NoSuchElementException("Cannot find User with such ID");
     }
 

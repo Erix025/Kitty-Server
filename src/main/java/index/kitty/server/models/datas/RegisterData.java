@@ -1,11 +1,11 @@
-package index.kitty.server.Models.Datas;
+package index.kitty.server.models.datas;
 
 import com.alibaba.fastjson2.JSONObject;
 
 public class RegisterData {
-    private JSONObject json;
-    private String userID;
-    private String password;
+    private final JSONObject json;
+    private final String userID;
+    private final String password;
 
     public final static String Head = "RegisterData";
 

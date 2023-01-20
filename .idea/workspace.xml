@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SPLITTER_PROPORTION" value="0.98333335" />
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="MainServer:jar" />
@@ -9,17 +13,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ff52f-fb49-47ed-9c05-8cae566635e8" name="Changes" comment="Add client exist checking.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LogoutData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LogoutReturnData.java" afterDir="false" />
+    <list default="true" id="1f4ff52f-fb49-47ed-9c05-8cae566635e8" name="Changes" comment="fixed bug: when the client exit">
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Methods/DataFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Methods/DataFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LoginData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LoginData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Threads/ReadThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Threads/ReadThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Methods/DataFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/methods/DataFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/DataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/datas/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LoginData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/datas/LoginData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LoginReturnData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/datas/LoginReturnData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LogoutData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/datas/LogoutData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LogoutReturnData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/datas/LogoutReturnData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/datas/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/MessageReturn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/datas/MessageReturn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/RegisterData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/datas/RegisterData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/RegisterReturnData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/datas/RegisterReturnData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Threads/ListenThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/threads/ListenThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/Threads/ReadThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/threads/ReadThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +75,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2K4dUTNTYvwjcfyROVtP40tLQYP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -79,6 +96,7 @@
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.fileTypes"
   }
 }]]></component>
@@ -121,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674031854554</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed bug: when the client exit">
+      <created>1674201588811</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674201588811</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -164,7 +189,8 @@
     <MESSAGE value="User login completed" />
     <MESSAGE value="use buffered reader&amp;writer to change data" />
     <MESSAGE value="Add client exist checking." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add client exist checking." />
+    <MESSAGE value="fixed bug: when the client exit" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bug: when the client exit" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

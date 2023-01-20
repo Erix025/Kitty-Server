@@ -1,11 +1,11 @@
-package index.kitty.server.Models.Datas;
+package index.kitty.server.models.datas;
 
 import com.alibaba.fastjson2.JSONObject;
 
 public class LogoutData {
-    private JSONObject json;
-    private String userID;
-    private String clientType;
+    private final JSONObject json;
+    private final String userID;
+    private final String clientType;
     public final static String Head = "LogoutData";
 
     public LogoutData(Data data) {

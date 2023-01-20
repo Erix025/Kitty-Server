@@ -1,16 +1,14 @@
-package index.kitty.server.Threads;
+package index.kitty.server.threads;
 
 import index.kitty.server.Main;
-import index.kitty.server.Methods.DataFactory;
-import index.kitty.server.Models.Client;
-import index.kitty.server.Models.Datas.Data;
+import index.kitty.server.methods.DataFactory;
+import index.kitty.server.models.Client;
+import index.kitty.server.models.datas.Data;
 
-import java.io.IOException;
 import java.net.SocketException;
 
 public class ReadThread extends Thread {
     private Thread thread;
-    private final String threadName = "KittySocketReadThread";
     private final Client client;
 
     public ReadThread(Client client) {
@@ -25,6 +23,7 @@ public class ReadThread extends Thread {
                 System.out.println(dataSource);
                 if (dataSource == null) {
                     // when the socket is closed
+                    //todo log
                     Main.mainServer.removeClient(client);
                     client.disconnect();
                     return;
@@ -32,11 +31,10 @@ public class ReadThread extends Thread {
                 DataFactory.DataAnalysis(new Data(dataSource), client);// Analysis Data
             } catch (SocketException e) {
                 // when the socket is closed
+                //todo log
                 Main.mainServer.removeClient(client);
                 client.disconnect();
                 return;
-            } catch (IOException e) {
-                // TODO ERR log
             }
         }
     }
@@ -44,6 +42,7 @@ public class ReadThread extends Thread {
     @Override
     public synchronized void start() {
         if (thread == null) {
+            String threadName = "KittySocketReadThread";
             thread = new Thread(this, threadName);
             thread.start();
         }

@@ -1,12 +1,12 @@
-package index.kitty.server.Models.Datas;
+package index.kitty.server.models.datas;
 
 import com.alibaba.fastjson2.JSONObject;
 
 public class LoginData {
-    private JSONObject json;
-    private String userID;
-    private String password;
-    private String clientType;
+    private final JSONObject json;
+    private final String userID;
+    private final String password;
+    private final String clientType;
     public final static String Head = "LoginData";
 
     public LoginData(Data data) // Receive the LoginData

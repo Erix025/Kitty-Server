@@ -1,4 +1,4 @@
-package index.kitty.server.Models.Datas;
+package index.kitty.server.models.datas;
 
 import com.alibaba.fastjson2.JSONObject;
 
@@ -6,10 +6,10 @@ import java.util.Date;
 
 public class Message {
     private final JSONObject json;
-    private String receiveUserID;
-    private String sendUserID;
-    private String content;
-    private Date sendTime;
+    private final String receiveUserID;
+    private final String sendUserID;
+    private final String content;
+    private final Date sendTime;
     public final static String Head = "Message";
 
     public Message(Data data) {

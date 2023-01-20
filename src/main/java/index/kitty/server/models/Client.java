@@ -1,6 +1,6 @@
-package index.kitty.server.Models;
+package index.kitty.server.models;
 
-import index.kitty.server.Threads.ReadThread;
+import index.kitty.server.threads.ReadThread;
 
 import java.io.*;
 import java.net.Socket;
@@ -8,10 +8,9 @@ import java.net.SocketException;
 import java.nio.charset.StandardCharsets;
 
 public class Client {
-    private Socket socket;
+    private final Socket socket;
     private BufferedReader in;
     private BufferedWriter out;
-    private ReadThread readThread;
     private String clientType;
 
     public Client(Socket socket) {
@@ -20,25 +19,12 @@ public class Client {
             // set DataStream
             in = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
             out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8));
-            readThread = new ReadThread(this);
+            ReadThread readThread = new ReadThread(this);
             readThread.start();
         } catch (IOException e) {
-            System.out.println(e);
+            //todo log
         }
     }
-
-    public Socket getSocket() {
-        return socket;
-    }
-
-    public BufferedReader getInputStream() {
-        return in;
-    }
-
-    public BufferedWriter getOutStream() {
-        return out;
-    }
-
     // get Socket Address
     public String getClientAddressInfo() {
         return socket.getInetAddress().getHostAddress();
@@ -50,7 +36,7 @@ public class Client {
             socket.close();
             // remove logged client and user
         } catch (IOException e) {
-            System.out.println(e);
+            //todo log
         }
     }
 
@@ -62,7 +48,7 @@ public class Client {
         } catch (SocketException e) {
             throw e;
         } catch (IOException e) {
-            System.out.println(e);
+            //todo log
         }
         return line;
     }

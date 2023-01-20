@@ -1,10 +1,10 @@
-package index.kitty.server.Models;
+package index.kitty.server.models;
 
 import java.nio.channels.AlreadyConnectedException;
 import java.util.ArrayList;
 
 public class User {
-    private ArrayList<Client> clients = new ArrayList<>();
+    private final ArrayList<Client> clients = new ArrayList<>();
     private String ID;
     private String Password;
 
