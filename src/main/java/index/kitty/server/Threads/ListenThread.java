@@ -20,9 +20,9 @@ public class ListenThread extends Thread {
             System.out.println("Waiting for a client ...");
             try {
                 acceptedSocket = server.serverSocket.accept();
-                //check if this client has connected
-                if(server.isClientConnected(acceptedSocket)){
-                    //TODO log
+                // check if this client has connected
+                if (server.isClientConnected(acceptedSocket)) {
+                    // TODO log
                     System.out.println("Client has connected");
                     acceptedSocket.close();
                     continue;

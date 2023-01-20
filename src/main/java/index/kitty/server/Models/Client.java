@@ -4,6 +4,7 @@ import index.kitty.server.Threads.ReadThread;
 
 import java.io.*;
 import java.net.Socket;
+import java.net.SocketException;
 import java.nio.charset.StandardCharsets;
 
 public class Client {
@@ -54,11 +55,11 @@ public class Client {
     }
 
     // get a line from the DataInputStream
-    public String getData() throws EOFException {
+    public String getData() throws SocketException {
         String line = "";
         try {
             line = in.readLine();
-        } catch (EOFException e) {
+        } catch (SocketException e) {
             throw e;
         } catch (IOException e) {
             System.out.println(e);

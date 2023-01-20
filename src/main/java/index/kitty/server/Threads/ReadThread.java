@@ -6,6 +6,7 @@ import index.kitty.server.Models.Client;
 import index.kitty.server.Models.Datas.Data;
 
 import java.io.IOException;
+import java.net.SocketException;
 
 public class ReadThread extends Thread {
     private Thread thread;
@@ -29,6 +30,11 @@ public class ReadThread extends Thread {
                     return;
                 }
                 DataFactory.DataAnalysis(new Data(dataSource), client);// Analysis Data
+            } catch (SocketException e) {
+                // when the socket is closed
+                Main.mainServer.removeClient(client);
+                client.disconnect();
+                return;
             } catch (IOException e) {
                 // TODO ERR log
             }
