@@ -21,7 +21,8 @@ public class ReadThread extends Thread {
         while (true) {
             try {
                 String dataSource = client.getData();
-                if (dataSource.equals("")) {
+                System.out.println(dataSource);
+                if (dataSource == null) {
                     // when the socket is closed
                     Main.mainServer.removeClient(client);
                     client.disconnect();

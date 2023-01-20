@@ -31,6 +31,8 @@ public class DataFactory {
             case RegisterData.Head:
                 Main.mainServer.putTask(new UserRegister(new RegisterData(source), client));
                 break;
+            case LogoutData.Head:
+                Main.mainServer.putTask(new UserLogout(new LogoutData(source), client));
         }
     }
 }
@@ -54,9 +56,9 @@ class SendMessage implements Runnable {
             for (Client client : object.getClients()) {
                 client.putData(JSON.toJSONString(message.getJson()));
             }
-            returnData = new MessageReturn(true, "���ͳɹ�");
+            returnData = new MessageReturn(true, "发送成功");
         } catch (NoSuchElementException e) {
-            returnData = new MessageReturn(false, "�û�δ��¼�򲻴���");
+            returnData = new MessageReturn(false, "发送失败，用户未登录或不存在");
             // TODO: Cache Message
         }
         client.putData(JSON.toJSONString(returnData.getJson()));
@@ -94,25 +96,40 @@ class UserLogin implements Runnable {
                 User user = Main.mainServer.getAliveUser(loginData.getUserID());
                 try {
                     user.putClient(client);
-                    loginInformation = "Login successfully";
+                    loginInformation = "登陆成功";
                 } catch (AlreadyConnectedException e) {
                     loginValid = false;
-                    loginInformation = "This client has already logged in";
+                    loginInformation = "该客户端已登录，请勿重复登录";
                 }
             } catch (NoSuchElementException e) {
                 // if the user has not been alive
                 Main.mainServer.putAliveUser(new User(loginData.getUserID(), client));
-                loginInformation = "Login successfully";
+                loginInformation = "登陆成功";
             }
         } else {
-            loginInformation = "The user isn't existed or the password is not correct";
+            loginInformation = "用户名或密码错误";
         }
         // send return data
         var returnData = new LoginReturnData(loginValid, loginInformation);
         client.putData(JSON.toJSONString(returnData.getJson()));
     }
 }
-
+class UserLogout implements  Runnable{
+    private LogoutData logoutData;
+    private Client client;
+    UserLogout(LogoutData logoutData, Client client)
+    {
+        this.logoutData = logoutData;
+        this.client = client;
+    }
+    @Override
+    public void run() {
+        Main.mainServer.logout(client, logoutData.getUserID());
+        //TODO log
+        System.out.println("User Logout");
+        client.putData(JSON.toJSONString((new LogoutReturnData(true, "注销成功")).getJson()));
+    }
+}
 class UserRegister implements Runnable {
     private RegisterData registerData;
     private Client client;
@@ -130,12 +147,12 @@ class UserRegister implements Runnable {
         for (User user : registeredUsers) {
             if (registerData.getUserID().equals(user.getID())) {
                 registerValid = false;
-                registerReturnInformation = "The user has already existed";
+                registerReturnInformation = "用户已存在";
                 break;
             }
         }
         if (registerValid) {
-            registerReturnInformation = "Register Successfully";
+            registerReturnInformation = "注册成功";
             registeredUsers.add(new User(registerData.getUserID(), registerData.getPassword()));
         }
         System.out.println(registerReturnInformation);

@@ -4,6 +4,7 @@ import index.kitty.server.Threads.ReadThread;
 
 import java.io.*;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 
 public class Client {
     private Socket socket;
@@ -11,12 +12,13 @@ public class Client {
     private BufferedWriter out;
     private ReadThread readThread;
     private String clientType;
+
     public Client(Socket socket) {
         this.socket = socket;
         try {
-            //set DataStream
-            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+            // set DataStream
+            in = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+            out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8));
             readThread = new ReadThread(this);
             readThread.start();
         } catch (IOException e) {
@@ -40,11 +42,12 @@ public class Client {
     public String getClientAddressInfo() {
         return socket.getInetAddress().getHostAddress();
     }
+
     // disconnect client
     public void disconnect() {
         try {
             socket.close();
-            //remove logged client and user
+            // remove logged client and user
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -62,8 +65,8 @@ public class Client {
         }
         return line;
     }
-    public void putData(String data)
-    {
+
+    public void putData(String data) {
         try {
             out.write(data + "\n");
             out.flush();

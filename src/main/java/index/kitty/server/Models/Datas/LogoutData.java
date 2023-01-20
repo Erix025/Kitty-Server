@@ -2,30 +2,24 @@ package index.kitty.server.Models.Datas;
 
 import com.alibaba.fastjson2.JSONObject;
 
-public class LoginData {
+public class LogoutData {
     private JSONObject json;
     private String userID;
-    private String password;
     private String clientType;
-    public final static String Head = "LoginData";
+    public final static String Head = "LogoutData";
 
-    public LoginData(Data data) // Receive the LoginData
-    {
+    public LogoutData(Data data) {
         json = data.getJson();
         userID = json.getString("UserID");
-        password = json.getString("Password");
         clientType = json.getString("ClientType");
     }
 
-    public LoginData(String userID, String password, String clientType)// Create the LoginData
-    {
+    public LogoutData(String userID, String clientType) {
         this.userID = userID;
-        this.password = password;
         this.clientType = clientType;
         json = new JSONObject();
         json.put("Head", Head);
         json.put("UserID", userID);
-        json.put("Password", password);
         json.put("ClientType", clientType);
     }
 
@@ -35,10 +29,6 @@ public class LoginData {
 
     public String getClientType() {
         return clientType;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     public String getUserID() {

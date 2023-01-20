@@ -3,6 +3,7 @@ package index.kitty.server.Models;
 import index.kitty.server.Threads.ListenThread;
 
 import java.io.*;
+import java.util.logging.*;
 import java.net.*;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
@@ -11,27 +12,31 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Server {
-    //initialize socket and input stream
+    // initialize socket and input stream
     public ArrayList<Client> Clients = new ArrayList<Client>();
     public ServerSocket serverSocket = null;
-    //listening Thread
+    // listening Thread
     private ListenThread listenThread;
-    //Tasks thread pool
+    // Tasks thread pool
     private ExecutorService tasksThreadPool;
     private DataBase dataBase;
     private ArrayList<User> aliveUsers = new ArrayList<>();
+    private Logger serverLogger;
 
     // constructor with port
     public Server(int port) {
+        // start logger
+
         // starts server and starts listening thread
         try {
+            // create server
             serverSocket = new ServerSocket(port);
             System.out.println("Server started");
-            //Initialize Database
+            // Initialize Database
             dataBase = new DataBase();
-            //create tasks thread pool
+            // create tasks thread pool
             tasksThreadPool = Executors.newFixedThreadPool(5);
-            //create listening thread
+            // create listening thread
             listenThread = new ListenThread(this);
             listenThread.start();
         } catch (IOException i) {
@@ -51,7 +56,7 @@ public class Server {
         } catch (IOException i) {
             System.out.println(i);
         }
-        //save database
+        // save database
         dataBase.SaveData();
     }
 
@@ -89,14 +94,27 @@ public class Server {
         }
         Clients.remove(client);
     }
+
     public boolean isClientConnected(Socket socket) {
-        for (Client client : Clients)
-        {
-            if(client.getClientAddressInfo().equals(socket.getInetAddress().getHostAddress()))
-            {
+        for (Client client : Clients) {
+            if (client.getClientAddressInfo().equals(socket.getInetAddress().getHostAddress())) {
                 return true;
             }
         }
         return false;
+    }
+    public void logout(Client client, String UserID)
+    {
+        for(var user : aliveUsers)
+        {
+            if(user.getID().equals(UserID))
+            {
+                user.getClients().remove(client);
+                break;
+            }
+        }
+    }
+    public void putLog(String string, Level level) {
+        serverLogger.log(level, string);
     }
 }
