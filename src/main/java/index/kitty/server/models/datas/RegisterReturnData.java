@@ -1,19 +1,20 @@
-package index.kitty.server.Models.Datas;
+package index.kitty.server.models.datas;
 
 import com.alibaba.fastjson2.JSONObject;
-import index.kitty.server.Models.Client;
 
 public class RegisterReturnData {
-    private JSONObject json;
-    private boolean isRegisterValid;
-    private String information;
+    private final JSONObject json;
+    private final boolean isRegisterValid;
+    private final String information;
     public final static String Head = "RegisterReturnData";
+
     public RegisterReturnData(Data data) {
         json = data.getJson();
         isRegisterValid = json.getBoolean("Valid");
         information = json.getString("Information");
     }
-    public RegisterReturnData(boolean isRegisterValid, String information){
+
+    public RegisterReturnData(boolean isRegisterValid, String information) {
         this.isRegisterValid = isRegisterValid;
         this.information = information;
         json = new JSONObject();

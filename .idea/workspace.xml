@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SPLITTER_PROPORTION" value="0.98333335" />
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="MainServer:jar" />
@@ -9,44 +13,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ff52f-fb49-47ed-9c05-8cae566635e8" name="Changes" comment="User login completed">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MainServer_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataBase/Users.data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Methods/DataFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/DataBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/Data.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LoginData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/LoginReturnData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/RegisterData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Datas/RegisterReturnData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Threads/ListenThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/Threads/ReadThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/DataBase/Users.data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Examples/DataBase/UsersExample.data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Examples/LoginDataExample.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Examples/LoginReturnDataExample.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Examples/MessageExample.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Examples/RegisterDataExample.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Examples/RegisterReturnDataExample.json" afterDir="false" />
+    <list default="true" id="1f4ff52f-fb49-47ed-9c05-8cae566635e8" name="Changes" comment="optimize codes">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MainServer_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/MainServer_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +27,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MainServer" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -71,6 +58,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2K4dUTNTYvwjcfyROVtP40tLQYP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -79,20 +69,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/erix0/Documents/MainFiles/Program/Kitty/Server/MainServer/build/classes/java/main/index/kitty/server&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/erix0/Documents/MainFiles/Program/Kitty/Server/MainServer",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.fileTypes"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\erix0\Documents\MainFiles\Program\Kitty\Server\MainServer\src\main\java\index\kitty\server\Models\Datas" />
       <recent name="C:\Users\erix0\Documents\MainFiles\Program\Kitty\Server\MainServer\build\classes\java\main\index\kitty\server" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -108,14 +101,79 @@
       <option name="presentableId" value="Default" />
       <updated>1673237807978</updated>
     </task>
+    <task id="LOCAL-00001" summary="User login completed">
+      <created>1673838588283</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673838588283</updated>
+    </task>
+    <task id="LOCAL-00002" summary="use buffered reader&amp;writer to change data">
+      <created>1674013493098</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674013493098</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add client exist checking.">
+      <created>1674031854554</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674031854554</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fixed bug: when the client exit">
+      <created>1674201588811</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674201588811</updated>
+    </task>
+    <task id="LOCAL-00005" summary="optimize codes">
+      <created>1674204042145</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1674204042145</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="SHOW_OTHER_BRANCHES" value="true" />
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -124,18 +182,13 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="User login completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="User login completed" />
+    <MESSAGE value="use buffered reader&amp;writer to change data" />
+    <MESSAGE value="Add client exist checking." />
+    <MESSAGE value="fixed bug: when the client exit" />
+    <MESSAGE value="optimize codes" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimize codes" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/index/kitty/server/Methods/DataFactory.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="index.kitty.server.Models.Datas.RegisterData" memberName="registerClient" />

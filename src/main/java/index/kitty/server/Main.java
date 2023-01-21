@@ -1,7 +1,7 @@
 package index.kitty.server;
 
-import index.kitty.server.Models.Client;
-import index.kitty.server.Models.Server;
+import index.kitty.server.models.Client;
+import index.kitty.server.models.Server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,28 +14,26 @@ public class Main {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         while(true)
         {
-            String order = "";
+            String order;
             try {
                 order = bufferedReader.readLine();
             }catch (IOException e)
             {
-                System.out.println(e);
+                throw new RuntimeException(e);
             }
-            switch (order)
-            {
-                case "exit":
+            switch (order) {
+                case "exit" -> {
                     mainServer.Close();
                     System.exit(0);
-                case "ConnectInfo":
-                    for(Client client : mainServer.Clients)
-                    {
+                }
+                case "ConnectInfo" -> {
+                    for (Client client : mainServer.Clients) {
                         System.out.println(client.getClientAddressInfo());
                     }
-                    if(mainServer.Clients.size() == 0)
-                    {
+                    if (mainServer.Clients.size() == 0) {
                         System.out.println("No Connections");
                     }
-                    break;
+                }
             }
         }
     }
