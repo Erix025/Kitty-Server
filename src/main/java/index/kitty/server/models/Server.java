@@ -21,28 +21,34 @@ public class Server {
     private ExecutorService tasksThreadPool;
     private DataBase dataBase;
     private final ArrayList<User> aliveUsers = new ArrayList<>();
-    private Logger serverLogger;
+    public Logger logger;
 
     // constructor with port
     public Server(int port) {
         // start logger
-
+        logger = Logger.getLogger("MainLogger");
+        Handler handler = null;
+        try {
+            handler = new FileHandler("server.log", true);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        if (handler != null)
+            logger.addHandler(handler);
         // starts server and starts listening thread
         try {
             // create server
             serverSocket = new ServerSocket(port);
-            System.out.println("Server started");
+            logger.info("Server started");
             // Initialize Database
             dataBase = new DataBase();
             // create tasks thread pool
             tasksThreadPool = Executors.newFixedThreadPool(5);
-            //todo log
-
             // create listening thread
             listenThread = new ListenThread(this);
             listenThread.start();
         } catch (IOException i) {
-            //todo log
+            logger.severe("IOException: Cannot create the server connection");
         }
     }
 
@@ -56,14 +62,14 @@ public class Server {
             }
             serverSocket.close();
         } catch (IOException i) {
-            //todo log
+            logger.severe("IOException: Cannot close the server connection");
         }
         // save database
         dataBase.SaveData();
     }
 
     public void putTask(Runnable task) {
-        //todo log
+        logger.fine("Submitted new task:" + task.getClass().getName());
         tasksThreadPool.submit(task);
     }
 
@@ -73,7 +79,7 @@ public class Server {
                 return user;
             }
         }
-        //todo log
+        logger.info("Cannot find User with such ID");
         throw new NoSuchElementException("Cannot find User with such ID");
     }
 
@@ -97,6 +103,7 @@ public class Server {
             }
         }
         Clients.remove(client);
+        logger.info("Remove alive Client: " + client.getClientAddressInfo());
     }
 
     public boolean isClientConnected(Socket socket) {
@@ -107,18 +114,14 @@ public class Server {
         }
         return false;
     }
-    public void logout(Client client, String UserID)
-    {
-        for(var user : aliveUsers)
-        {
-            if(user.getID().equals(UserID))
-            {
+
+    public void logout(Client client, String UserID) {
+        for (var user : aliveUsers) {
+            if (user.getID().equals(UserID)) {
                 user.getClients().remove(client);
                 break;
             }
         }
-    }
-    public void putLog(String string, Level level) {
-        serverLogger.log(level, string);
+        logger.info("User logout: " + UserID);
     }
 }

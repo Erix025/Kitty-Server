@@ -1,5 +1,7 @@
 package index.kitty.server.models;
 
+import index.kitty.server.Main;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -37,10 +39,9 @@ public class DataBase {
                 line = reader.readLine();
             }
         } catch (FileNotFoundException e) {
-            //todo log
+            Main.mainServer.logger.severe("File \"Users.data\" not found.");
         } catch (IOException e) {
-            //todo log
-            throw new RuntimeException(e);
+            Main.mainServer.logger.severe("IOException: Cannot read the file \"Users.data\".");
         }
     }
 
@@ -56,8 +57,7 @@ public class DataBase {
                 writer.flush();
             }
         } catch (IOException e) {
-            //todo log
-            throw new RuntimeException(e);
+            Main.mainServer.logger.severe("IOException: Cannot save the file \"Users.data\".");
         }
     }
 }

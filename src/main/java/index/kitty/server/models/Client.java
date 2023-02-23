@@ -1,11 +1,13 @@
 package index.kitty.server.models;
 
+import index.kitty.server.Main;
 import index.kitty.server.threads.ReadThread;
 
 import java.io.*;
 import java.net.Socket;
 import java.net.SocketException;
 import java.nio.charset.StandardCharsets;
+import java.util.logging.Level;
 
 public class Client {
     private final Socket socket;
@@ -21,8 +23,9 @@ public class Client {
             out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8));
             ReadThread readThread = new ReadThread(this);
             readThread.start();
+            Main.mainServer.logger.info("Waiting for the message from client");
         } catch (IOException e) {
-            //todo log
+            Main.mainServer.logger.severe("IOException: can not get input or output stream.");
         }
     }
     // get Socket Address
@@ -34,9 +37,9 @@ public class Client {
     public void disconnect() {
         try {
             socket.close();
-            // remove logged client and user
+            Main.mainServer.logger.info("Client closed.");
         } catch (IOException e) {
-            //todo log
+            Main.mainServer.logger.severe("IOException: can not close the server");
         }
     }
 
@@ -45,10 +48,11 @@ public class Client {
         String line = "";
         try {
             line = in.readLine();
+            Main.mainServer.logger.fine("got Data:"+line);
         } catch (SocketException e) {
             throw e;
         } catch (IOException e) {
-            //todo log
+            Main.mainServer.logger.severe("IOException: can not get Data from the client");
         }
         return line;
     }
@@ -57,8 +61,9 @@ public class Client {
         try {
             out.write(data + "\n");
             out.flush();
+            Main.mainServer.logger.fine("send data: "+data);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            Main.mainServer.logger.severe("IOException: can not put Data to the client");
         }
     }
 

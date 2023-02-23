@@ -1,7 +1,10 @@
 package index.kitty.server.models;
 
+import index.kitty.server.Main;
+
 import java.nio.channels.AlreadyConnectedException;
 import java.util.ArrayList;
+import java.util.logging.Level;
 
 public class User {
     private final ArrayList<Client> clients = new ArrayList<>();
@@ -50,6 +53,7 @@ public class User {
             }
         }
         clients.add(client);
+        Main.mainServer.logger.info("A new client added to User: "+ID);
     }
 
     public ArrayList<Client> getClients() {

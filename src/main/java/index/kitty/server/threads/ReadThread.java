@@ -20,18 +20,18 @@ public class ReadThread extends Thread {
         while (true) {
             try {
                 String dataSource = client.getData();
-                System.out.println(dataSource);
                 if (dataSource == null) {
                     // when the socket is closed
-                    //todo log
+                    Main.mainServer.logger.info("Socket has been closed");
                     Main.mainServer.removeClient(client);
                     client.disconnect();
                     return;
                 }
+                Main.mainServer.logger.fine("Get data: " + dataSource);
                 DataFactory.DataAnalysis(new Data(dataSource), client);// Analysis Data
             } catch (SocketException e) {
                 // when the socket is closed
-                //todo log
+                Main.mainServer.logger.info("Socket has been closed");
                 Main.mainServer.removeClient(client);
                 client.disconnect();
                 return;
