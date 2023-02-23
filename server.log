@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-02-23T09:15:03.848613500Z</date>
+  <millis>1677143703848</millis>
+  <nanos>613500</nanos>
+  <sequence>0</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>1</thread>
+  <message>Server started</message>
+</record>
+<record>
+  <date>2023-02-23T09:15:03.907531500Z</date>
+  <millis>1677143703907</millis>
+  <nanos>531500</nanos>
+  <sequence>1</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>17</thread>
+  <message>Waiting for a client...</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-02-23T09:17:25.063747400Z</date>
+  <millis>1677143845063</millis>
+  <nanos>747400</nanos>
+  <sequence>0</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>1</thread>
+  <message>Server started</message>
+</record>
+<record>
+  <date>2023-02-23T09:17:25.113471200Z</date>
+  <millis>1677143845113</millis>
+  <nanos>471200</nanos>
+  <sequence>1</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>17</thread>
+  <message>Waiting for a client...</message>
+</record>
+<record>
+  <date>2023-02-23T09:18:13.225332800Z</date>
+  <millis>1677143893225</millis>
+  <nanos>332800</nanos>
+  <sequence>2</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>17</thread>
+  <message>Waiting for the message from client</message>
+</record>
+<record>
+  <date>2023-02-23T09:18:13.226333200Z</date>
+  <millis>1677143893226</millis>
+  <nanos>333200</nanos>
+  <sequence>3</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>17</thread>
+  <message>Client connected</message>
+</record>
+<record>
+  <date>2023-02-23T09:18:13.226333200Z</date>
+  <millis>1677143893226</millis>
+  <nanos>333200</nanos>
+  <sequence>4</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>17</thread>
+  <message>Waiting for a client...</message>
+</record>
+<record>
+  <date>2023-02-23T09:18:36.088435200Z</date>
+  <millis>1677143916088</millis>
+  <nanos>435200</nanos>
+  <sequence>5</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>20</thread>
+  <message>Password check unsuccessfully.</message>
+</record>
+<record>
+  <date>2023-02-23T09:18:57.650360400Z</date>
+  <millis>1677143937650</millis>
+  <nanos>360400</nanos>
+  <sequence>6</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>21</thread>
+  <message>Password check unsuccessfully.</message>
+</record>
+<record>
+  <date>2023-02-23T09:19:03.593710700Z</date>
+  <millis>1677143943593</millis>
+  <nanos>710700</nanos>
+  <sequence>7</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>22</thread>
+  <message>Password check unsuccessfully.</message>
+</record>
+<record>
+  <date>2023-02-23T09:19:21.880692100Z</date>
+  <millis>1677143961880</millis>
+  <nanos>692100</nanos>
+  <sequence>8</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>23</thread>
+  <message>Password check successfully.</message>
+</record>
+<record>
+  <date>2023-02-23T09:19:21.881690500Z</date>
+  <millis>1677143961881</millis>
+  <nanos>690500</nanos>
+  <sequence>9</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>23</thread>
+  <message>Cannot find User with such ID</message>
+</record>
+<record>
+  <date>2023-02-23T09:19:21.881690500Z</date>
+  <millis>1677143961881</millis>
+  <nanos>690500</nanos>
+  <sequence>10</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>23</thread>
+  <message>Login successfully.</message>
+</record>
+<record>
+  <date>2023-02-23T09:19:44.968203800Z</date>
+  <millis>1677143984968</millis>
+  <nanos>203800</nanos>
+  <sequence>11</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>24</thread>
+  <message>Send message successfully.</message>
+</record>
+<record>
+  <date>2023-02-23T09:20:13.322600200Z</date>
+  <millis>1677144013322</millis>
+  <nanos>600200</nanos>
+  <sequence>12</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>20</thread>
+  <message>User logout: Eric025</message>
+</record>
+<record>
+  <date>2023-02-23T09:20:13.323606100Z</date>
+  <millis>1677144013323</millis>
+  <nanos>606100</nanos>
+  <sequence>13</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>20</thread>
+  <message>User log out successfully.</message>
+</record>
+<record>
+  <date>2023-02-23T09:20:23.844075Z</date>
+  <millis>1677144023844</millis>
+  <nanos>75000</nanos>
+  <sequence>14</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>19</thread>
+  <message>Socket has been closed</message>
+</record>
+<record>
+  <date>2023-02-23T09:20:23.845067800Z</date>
+  <millis>1677144023845</millis>
+  <nanos>67800</nanos>
+  <sequence>15</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>19</thread>
+  <message>Remove alive Client: 127.0.0.1</message>
+</record>
+<record>
+  <date>2023-02-23T09:20:23.849066100Z</date>
+  <millis>1677144023849</millis>
+  <nanos>66100</nanos>
+  <sequence>16</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>19</thread>
+  <message>Server closed.</message>
+</record>
+<record>
+  <date>2023-02-23T09:20:53.942552600Z</date>
+  <millis>1677144053942</millis>
+  <nanos>552600</nanos>
+  <sequence>17</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>17</thread>
+  <message>Waiting for the message from client</message>
+</record>
+<record>
+  <date>2023-02-23T09:20:53.943621100Z</date>
+  <millis>1677144053943</millis>
+  <nanos>621100</nanos>
+  <sequence>18</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>17</thread>
+  <message>Client connected</message>
+</record>
+<record>
+  <date>2023-02-23T09:20:53.943960100Z</date>
+  <millis>1677144053943</millis>
+  <nanos>960100</nanos>
+  <sequence>19</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>17</thread>
+  <message>Waiting for a client...</message>
+</record>
+<record>
+  <date>2023-02-23T09:21:39.443370100Z</date>
+  <millis>1677144099443</millis>
+  <nanos>370100</nanos>
+  <sequence>20</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>26</thread>
+  <message>Socket has been closed</message>
+</record>
+<record>
+  <date>2023-02-23T09:21:39.444334700Z</date>
+  <millis>1677144099444</millis>
+  <nanos>334700</nanos>
+  <sequence>21</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>26</thread>
+  <message>Remove alive Client: 127.0.0.1</message>
+</record>
+<record>
+  <date>2023-02-23T09:21:39.444334700Z</date>
+  <millis>1677144099444</millis>
+  <nanos>334700</nanos>
+  <sequence>22</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>putLog</method>
+  <thread>26</thread>
+  <message>Server closed.</message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-02-23T10:48:51.699474800Z</date>
+  <millis>1677149331699</millis>
+  <nanos>474800</nanos>
+  <sequence>0</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Server started</message>
+</record>
+<record>
+  <date>2023-02-23T10:48:51.758974800Z</date>
+  <millis>1677149331758</millis>
+  <nanos>974800</nanos>
+  <sequence>1</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.threads.ListenThread</class>
+  <method>run</method>
+  <thread>17</thread>
+  <message>Waiting for a client...</message>
+</record>
+<record>
+  <date>2023-02-23T10:49:11.128852Z</date>
+  <millis>1677149351128</millis>
+  <nanos>852000</nanos>
+  <sequence>2</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Client</class>
+  <method>&lt;init&gt;</method>
+  <thread>17</thread>
+  <message>Waiting for the message from client</message>
+</record>
+<record>
+  <date>2023-02-23T10:49:11.130495600Z</date>
+  <millis>1677149351130</millis>
+  <nanos>495600</nanos>
+  <sequence>3</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.threads.ListenThread</class>
+  <method>run</method>
+  <thread>17</thread>
+  <message>Client connected</message>
+</record>
+<record>
+  <date>2023-02-23T10:49:11.131502500Z</date>
+  <millis>1677149351131</millis>
+  <nanos>502500</nanos>
+  <sequence>4</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.threads.ListenThread</class>
+  <method>run</method>
+  <thread>17</thread>
+  <message>Waiting for a client...</message>
+</record>
+<record>
+  <date>2023-02-23T10:49:34.728269800Z</date>
+  <millis>1677149374728</millis>
+  <nanos>269800</nanos>
+  <sequence>5</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.methods.UserLogin</class>
+  <method>run</method>
+  <thread>20</thread>
+  <message>Password check successfully.</message>
+</record>
+<record>
+  <date>2023-02-23T10:49:34.729276Z</date>
+  <millis>1677149374729</millis>
+  <nanos>276000</nanos>
+  <sequence>6</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>getAliveUser</method>
+  <thread>20</thread>
+  <message>Cannot find User with such ID</message>
+</record>
+<record>
+  <date>2023-02-23T10:49:34.730279500Z</date>
+  <millis>1677149374730</millis>
+  <nanos>279500</nanos>
+  <sequence>7</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.methods.UserLogin</class>
+  <method>run</method>
+  <thread>20</thread>
+  <message>Login successfully.</message>
+</record>
+<record>
+  <date>2023-02-23T10:49:37.735477300Z</date>
+  <millis>1677149377735</millis>
+  <nanos>477300</nanos>
+  <sequence>8</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>logout</method>
+  <thread>21</thread>
+  <message>User logout: Eric025</message>
+</record>
+<record>
+  <date>2023-02-23T10:49:37.736577500Z</date>
+  <millis>1677149377736</millis>
+  <nanos>577500</nanos>
+  <sequence>9</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.methods.UserLogout</class>
+  <method>run</method>
+  <thread>21</thread>
+  <message>User log out successfully.</message>
+</record>
+<record>
+  <date>2023-02-23T10:49:47.638674200Z</date>
+  <millis>1677149387638</millis>
+  <nanos>674200</nanos>
+  <sequence>10</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.methods.UserLogin</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>Password check successfully.</message>
+</record>
+<record>
+  <date>2023-02-23T10:49:47.640184300Z</date>
+  <millis>1677149387640</millis>
+  <nanos>184300</nanos>
+  <sequence>11</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.User</class>
+  <method>putClient</method>
+  <thread>22</thread>
+  <message>A new client added to User: Eric025</message>
+</record>
+<record>
+  <date>2023-02-23T10:49:47.640897Z</date>
+  <millis>1677149387640</millis>
+  <nanos>897000</nanos>
+  <sequence>12</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.methods.UserLogin</class>
+  <method>run</method>
+  <thread>22</thread>
+  <message>Login successfully.</message>
+</record>
+<record>
+  <date>2023-02-23T10:49:57.756675900Z</date>
+  <millis>1677149397756</millis>
+  <nanos>675900</nanos>
+  <sequence>13</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.methods.SendMessage</class>
+  <method>run</method>
+  <thread>23</thread>
+  <message>Send message successfully.</message>
+</record>
+<record>
+  <date>2023-02-23T10:50:08.557584600Z</date>
+  <millis>1677149408557</millis>
+  <nanos>584600</nanos>
+  <sequence>14</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.threads.ReadThread</class>
+  <method>run</method>
+  <thread>19</thread>
+  <message>Socket has been closed</message>
+</record>
+<record>
+  <date>2023-02-23T10:50:08.558579600Z</date>
+  <millis>1677149408558</millis>
+  <nanos>579600</nanos>
+  <sequence>15</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Server</class>
+  <method>removeClient</method>
+  <thread>19</thread>
+  <message>Remove alive Client: 127.0.0.1</message>
+</record>
+<record>
+  <date>2023-02-23T10:50:08.560086200Z</date>
+  <millis>1677149408560</millis>
+  <nanos>86200</nanos>
+  <sequence>16</sequence>
+  <logger>MainLogger</logger>
+  <level>INFO</level>
+  <class>index.kitty.server.models.Client</class>
+  <method>disconnect</method>
+  <thread>19</thread>
+  <message>Client closed.</message>
+</record>

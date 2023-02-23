@@ -8,6 +8,7 @@ import index.kitty.server.models.User;
 
 import java.nio.channels.AlreadyConnectedException;
 import java.util.NoSuchElementException;
+import java.util.logging.Level;
 
 public class DataFactory {
     private static void DataAnalysis(Data source) {
@@ -44,8 +45,10 @@ class SendMessage implements Runnable {
                 client.putData(JSON.toJSONString(message.getJson()));
             }
             returnData = new MessageReturn(true, "发送成功");
+            Main.mainServer.logger.info("Send message successfully.");
         } catch (NoSuchElementException e) {
             returnData = new MessageReturn(false, "发送失败，用户未登录或不存在");
+            Main.mainServer.logger.info("Send unsuccessfully. The objective user isn't online or doesn't exist.");
             // TODO: Cache Message
         }
         client.putData(JSON.toJSONString(returnData.getJson()));
@@ -75,48 +78,56 @@ class UserLogin implements Runnable {
         }
         // login or not login
         if (loginValid) {
-            // TODO login log
+            Main.mainServer.logger.info("Password check successfully.");
             client.setClientType(loginData.getClientType());
             // Add the user in AliveUsers
             try {
                 // if the user has already been alive
                 User user = Main.mainServer.getAliveUser(loginData.getUserID());
                 try {
+                    // other devices from the same alive user
                     user.putClient(client);
+                    Main.mainServer.logger.info("Login successfully.");
                     loginInformation = "登陆成功";
                 } catch (AlreadyConnectedException e) {
                     loginValid = false;
+                    Main.mainServer.logger.info("Login unsuccessfully. The user has logged in.");
                     loginInformation = "该客户端已登录，请勿重复登录";
                 }
             } catch (NoSuchElementException e) {
                 // if the user has not been alive
                 Main.mainServer.putAliveUser(new User(loginData.getUserID(), client));
+                Main.mainServer.logger.info("Login successfully.");
                 loginInformation = "登陆成功";
             }
         } else {
             loginInformation = "用户名或密码错误";
+            Main.mainServer.logger.info("Password check unsuccessfully.");
         }
         // send return data
         var returnData = new LoginReturnData(loginValid, loginInformation);
         client.putData(JSON.toJSONString(returnData.getJson()));
     }
 }
-class UserLogout implements  Runnable{
+
+class UserLogout implements Runnable {
     private final LogoutData logoutData;
     private final Client client;
-    UserLogout(LogoutData logoutData, Client client)
-    {
+
+    UserLogout(LogoutData logoutData, Client client) {
         this.logoutData = logoutData;
         this.client = client;
     }
+
     @Override
     public void run() {
         Main.mainServer.logout(client, logoutData.getUserID());
-        //TODO log
+        Main.mainServer.logger.info("User log out successfully.");
         System.out.println("User Logout");
         client.putData(JSON.toJSONString((new LogoutReturnData(true, "注销成功")).getJson()));
     }
 }
+
 class UserRegister implements Runnable {
     private final RegisterData registerData;
     private final Client client;
@@ -135,12 +146,14 @@ class UserRegister implements Runnable {
             if (registerData.getUserID().equals(user.getID())) {
                 registerValid = false;
                 registerReturnInformation = "用户已存在";
+                Main.mainServer.logger.info("Register unsuccessfully. The user has existed.");
                 break;
             }
         }
         if (registerValid) {
             registerReturnInformation = "注册成功";
             registeredUsers.add(new User(registerData.getUserID(), registerData.getPassword()));
+            Main.mainServer.logger.info("Register successfully.");
         }
         System.out.println(registerReturnInformation);
         RegisterReturnData returnData = new RegisterReturnData(registerValid, registerReturnInformation);

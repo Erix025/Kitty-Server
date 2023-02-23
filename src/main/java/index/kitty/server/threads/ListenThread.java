@@ -1,14 +1,16 @@
 package index.kitty.server.threads;
 
+import index.kitty.server.Main;
 import index.kitty.server.models.Client;
 import index.kitty.server.models.Server;
 
 import java.io.IOException;
 import java.net.Socket;
+import java.util.logging.Level;
 
 public class ListenThread extends Thread {
     private Thread thread;
-    private final Server server;
+    private Server server;
 
     public ListenThread(Server server) {
         this.server = server;
@@ -17,21 +19,19 @@ public class ListenThread extends Thread {
     public void run() {
         while (!isInterrupted()) {
             Socket acceptedSocket;
-            //todo log
-            System.out.println("Waiting for a client ...");
+            server.logger.info("Waiting for a client...");
             try {
                 acceptedSocket = server.serverSocket.accept();
                 // check if this client has connected
                 if (server.isClientConnected(acceptedSocket)) {
-                    // TODO log
-                    System.out.println("Client has connected");
+                    server.logger.info("Client has connected");
                     acceptedSocket.close();
                     continue;
                 }
                 server.Clients.add(new Client(acceptedSocket));
-                System.out.println("Client accepted");
+                server.logger.info("Client connected");
             } catch (IOException e) {
-                //todo log
+                server.logger.severe("IOException: cannot connect to the client");
             }
         }
     }
