@@ -96,6 +96,7 @@ public class Server {
             if (user.getClients().contains(client)) {
                 if (user.getClients().size() == 1) {
                     aliveUsers.remove(user);
+                    logger.info("Remove alive User: "+ user.getID());
                 } else {
                     user.getClients().remove(client);
                 }

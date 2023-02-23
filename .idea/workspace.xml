@@ -13,17 +13,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ff52f-fb49-47ed-9c05-8cae566635e8" name="Changes" comment="fixed output bug">
-      <change afterPath="$PROJECT_DIR$/server.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server.log.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/methods/DataFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/methods/DataFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/DataBase.java" afterDir="false" />
+    <list default="true" id="1f4ff52f-fb49-47ed-9c05-8cae566635e8" name="Changes" comment="add server logger">
       <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/threads/ListenThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/threads/ListenThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/index/kitty/server/threads/ReadThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/kitty/server/threads/ReadThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674209830889</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add server logger">
+      <created>1677149600239</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677149600239</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -221,7 +219,8 @@
     <MESSAGE value="fixed bug: when the client exit" />
     <MESSAGE value="optimize codes" />
     <MESSAGE value="fixed output bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed output bug" />
+    <MESSAGE value="add server logger" />
+    <option name="LAST_COMMIT_MESSAGE" value="add server logger" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
